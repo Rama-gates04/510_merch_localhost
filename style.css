@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap');
+
+:root {
+    --bg: #10110f;
+    --panel: #191b18;
+    --panel2: #20231e;
+    --line: #34372f;
+    --text: #f3f1e9;
+    --muted: #a4a79a;
+    --acid: #d4f36a;
+    --orange: #ff8b55;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--text); font-family: 'Manrope', sans-serif; }
+.topbar { display:flex; align-items:center; gap:16px; padding:22px max(5vw, 20px); border-bottom:1px solid var(--line); }
+.brand-mark { width:56px; height:56px; display:grid; place-items:center; background:var(--acid); color:#151710; font-weight:800; font-size:20px; letter-spacing:-2px; transform:rotate(-4deg); }
+.eyebrow { font-family:'DM Mono', monospace; color:var(--acid); letter-spacing:1.5px; font-size:10px; margin:0 0 8px; }
+h1 { font-size:21px; margin:0; letter-spacing:-.8px; }
+h1 span { color:var(--muted); font-weight:500; }
+.status { margin-left:auto; font:10px 'DM Mono', monospace; color:var(--muted); letter-spacing:1px; }
+.status span { display:inline-block; width:7px; height:7px; background:var(--acid); border-radius:50%; margin-right:8px; box-shadow:0 0 10px #d4f36a77; }
+.container { max-width:1200px; margin:auto; padding:35px 24px 24px; }
+.intro { display:flex; align-items:flex-end; justify-content:space-between; gap:25px; padding:20px 0 34px; }
+h2 { margin:0; font-size:clamp(23px, 3vw, 35px); line-height:1.2; letter-spacing:-1.2px; }
+h2 em { font-style:normal; color:var(--acid); }
+.muted, small { color:var(--muted); }
+.intro .muted { max-width:540px; font-size:13px; line-height:1.7; margin:14px 0 0; }
+.intro-note { color:var(--acid); font:20px 'DM Mono', monospace; text-align:right; line-height:1.4; }
+.intro-note small { display:block; font-size:9px; letter-spacing:1px; }
+.stats { display:grid; grid-template-columns:repeat(4, 1fr); gap:12px; margin-bottom:18px; }
+.stat-card { padding:20px; border:1px solid var(--line); background:var(--panel); min-width:0; }
+.stat-card p { margin:0 0 15px; color:var(--muted); font-size:12px; }
+.stat-card h3 { margin:0 0 12px; font-size:clamp(18px, 2vw, 25px); letter-spacing:-1px; overflow-wrap:anywhere; }
+.stat-card small { font-size:10px; }
+.stat-card.highlight { background:var(--acid); color:#171910; border-color:var(--acid); }
+.stat-card.highlight p, .stat-card.highlight small { color:#4c542e; }
+.workspace { display:grid; grid-template-columns:1fr 1fr; gap:18px; margin-bottom:18px; }
+.panel { background:var(--panel); border:1px solid var(--line); padding:23px; margin-bottom:18px; }
+.workspace .panel { margin-bottom:0; }
+.panel-heading { display:flex; justify-content:space-between; align-items:center; gap:15px; margin-bottom:22px; }
+.panel-heading h2 { font-size:20px; letter-spacing:-.6px; }
+.icon { color:var(--acid); font-size:25px; }
+form label { display:block; color:var(--muted); font-size:11px; margin:14px 0 7px; }
+input, select { width:100%; padding:12px 13px; color:var(--text); background:#11130f; border:1px solid var(--line); border-radius:0; font:12px 'Manrope', sans-serif; outline:none; }
+input:focus, select:focus { border-color:var(--acid); }
+button { width:100%; margin-top:18px; padding:13px 15px; border:0; background:var(--acid); color:#151710; font:800 12px 'Manrope', sans-serif; cursor:pointer; text-align:left; }
+button span { float:right; font-size:17px; line-height:12px; }
+button:hover { filter:brightness(.94); }
+.stock-panel { margin-top:18px; }
+.table-wrap { width:100%; overflow-x:auto; }
+table { width:100%; border-collapse:collapse; text-align:left; white-space:nowrap; }
+th { color:var(--muted); font:10px 'DM Mono', monospace; text-transform:uppercase; letter-spacing:.8px; padding:12px; border-bottom:1px solid var(--line); }
+td { padding:14px 12px; border-bottom:1px solid #2b2e27; font-size:12px; }
+tbody tr:last-child td { border-bottom:0; }
+.stock-badge, .type { display:inline-block; padding:5px 8px; background:#292e20; color:var(--acid); font:10px 'DM Mono', monospace; }
+.type.pemasukan { background:#1d3028; color:#7fe0ae; }
+.type.pengeluaran { background:#39251e; color:var(--orange); }
+.money { font-weight:700; }
+.empty { text-align:center; color:var(--muted); padding:28px; }
+.inline-form { display:grid; grid-template-columns:2fr 1fr auto; gap:10px; margin-top:18px; }
+.inline-form button { width:auto; margin:0; white-space:nowrap; }
+button.secondary { background:var(--panel2); color:var(--acid); border:1px solid var(--line); }
+.notice { margin:0 0 18px; padding:12px 15px; font-size:12px; }
+.success { background:#1d3028; color:#7fe0ae; border:1px solid #31533e; }
+.error { background:#39251e; color:#ffad88; border:1px solid #68402d; }
+.small { font-size:10px; }
+footer { display:flex; justify-content:space-between; gap:15px; padding:22px 0 5px; color:var(--muted); font:9px 'DM Mono', monospace; letter-spacing:.8px; }
+@media (max-width:800px) {
+    .stats { grid-template-columns:repeat(2, 1fr); }
+    .workspace { grid-template-columns:1fr; }
+    .intro-note { display:none; }
+    .status { display:none; }
+}
+@media (max-width:500px) {
+    .container { padding:25px 14px; }
+    .topbar { padding:17px 14px; }
+    h1 { font-size:16px; }
+    .brand-mark { width:46px; height:46px; }
+    .stat-card { padding:14px; }
+    .stat-card h3 { font-size:17px; }
+    .panel { padding:16px; }
+    .inline-form { grid-template-columns:1fr; }
+    .inline-form button { width:100%; }
+    footer { flex-direction:column; }
+}
+
+
+/* Hero artwork supplied by the user */
+.hero-banner {
+    position: relative;
+    isolation: isolate;
+    min-height: 330px;
+    padding: 38px;
+    align-items: center;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    background-image:
+        linear-gradient(90deg, rgba(13, 16, 13, .94) 0%, rgba(13, 16, 13, .78) 42%, rgba(13, 16, 13, .22) 100%),
+        url("510-spiritual-wallpaper.jpg");
+    background-size: cover;
+    background-position: center 44%;
+    margin-bottom: 22px;
+}
+.hero-copy { max-width: 620px; }
+.hero-banner .intro-note {
+    position: relative;
+    z-index: 1;
+    align-self: flex-start;
+    padding: 10px 14px;
+    border: 1px solid rgba(212, 243, 106, .55);
+    background: rgba(16, 17, 15, .62);
+}
+.hero-banner .muted { color: #e0e1d7; }
+@media (max-width: 600px) {
+    .hero-banner { min-height: 280px; padding: 22px; background-position: center; }
+}
